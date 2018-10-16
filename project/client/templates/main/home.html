@@ -1,0 +1,66 @@
+{% extends "_base.html" %}
+{% block content %}
+    <div class="main">
+        <div class="container tim-container" style="max-width:800px;">
+           <div class="col-md-12">
+            <h4>
+                {% include 'texts/intro-text.html' %}
+            </h4>
+            <br>
+
+    <!-- navbar blue -->
+
+    {% set navbar_colors = ['red', 'orange', 'violet', 'green', 'blue', 'azzure'] %}
+    {% set navbar_colors = navbar_colors + navbar_colors + navbar_colors + navbar_colors %}
+
+    {% if not services %}
+       <div>
+           <h3>There is no any running service</h3>
+           <p>
+               If this is wrong, then please verify labels of your RUNNING containers:
+               <ul>
+                    <li>org.docker.services.dashboard.enabled</li>
+                    <li>org.docker.services.dashboard.domain</li>
+                    <li>org.docker.services.dashboard.icon</li>
+                    <li>org.docker.services.dashboard.description</li>
+               </ul>
+           </p>
+       </div>
+    {% endif %}
+
+    {% for service in services %}
+        {% set service_color = navbar_colors[loop.index - 1] %}
+        <div>
+            <nav class="navbar navbar-ct-{{ service_color }} app-bar">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" style="width: 100%;">
+                      {{ service.get_domain() }}
+                  </a>
+                  {% if service.get_description() %}
+                  <br>
+                  <div style="color: white; margin-left: 35px; margin-bottom: 20px;">
+                      {{ service.get_description() }}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                      {% if service.is_web_service() %}
+                      <li>
+                          <a href="http://{{ service.get_domain() }}" target="_blank">
+                              <i class="{{ service.get_icon() }}"></i>
+                              <p>Open</p>
+                          </a>
+                      </li>
+                      {% endif %}
+                 </ul>
+              </div>
+            </nav>
+        </div>
+    {% endfor %}
+
+           </div>
+        </div>
+    </div>
+{% endblock %}

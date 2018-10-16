@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/pe-icon-7-stroke.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/ct-navbar.css')}}" rel="stylesheet">
+    <title>{{ config.APP_NAME }}{% block title %}{% endblock %}</title>
+
+    <!--     Font Awesome     -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <style>
+        .fa-heart{
+            color: #F74933;
+        }
+        .space-100{
+            height: 100px;
+            display: block;
+        }
+        pre.prettyprint{
+            background-color: #ffffff;
+            border: 1px solid #999;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: left;
+        }
+        .atv, .str{
+            color: #05AE0E;
+        }
+        .tag, .pln, .kwd{
+             color: #3472F7;
+        }
+        .atn{
+          color: #2C93FF;
+        }
+        .pln{
+           color: #333;
+        }
+        .com{
+            color: #999;
+        }
+    </style>
+
+    {% block css %}{% endblock %}
+</head>
+
+<body>
+    {% include 'header.html' %}
+    {% block content %}{% endblock %}
+    <div class="space-100"></div>
+    {% include 'footer.html' %}
+<!-- end container -->
+</div>
+<!-- end main -->
+
+</body>
+    {% block js %}{% endblock %}
+</html>

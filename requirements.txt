@@ -1,0 +1,9 @@
+coverage==4.5
+flake8==3.5
+Flask==1.0
+Flask-Bcrypt==0.7
+Flask-DebugToolbar==0.10
+Flask-Testing==0.7
+Flask-WTF==0.14
+docker==3.5
+unittest-data-provider
