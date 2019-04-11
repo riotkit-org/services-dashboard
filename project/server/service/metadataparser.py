@@ -30,6 +30,9 @@ class MetadataParser:
                 attributes[key[4:].upper()] = value
                 continue
 
+            elif key[0:12] == 'org.riotkit.':
+                attributes[key[12:].upper()] = value
+
             elif key[0:30] == 'org.docker.services.dashboard.':
                 attributes[key[30:].upper()] = value
                 continue

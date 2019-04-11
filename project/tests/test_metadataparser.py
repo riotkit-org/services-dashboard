@@ -36,9 +36,9 @@ def container_data_provider():
         (
             [],
             {
-                'org.docker.services.dashboard.domain': 'federacja-anarchistyczna.pl',
-                'org.docker.services.dashboard.enabled': 'true',
-                'org.docker.services.dashboard.only_for_admin': 'false'
+                'org.riotkit.dashboard.domain': 'federacja-anarchistyczna.pl',
+                'org.riotkit.dashboard.enabled': 'true',
+                'org.riotkit.dashboard.only_for_admin': 'false'
             },
             ['federacja-anarchistyczna.pl'], [80], {
                 'ENABLED': 'true',

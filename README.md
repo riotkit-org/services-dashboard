@@ -61,11 +61,11 @@ Example service configuration:
             - LETSENCRYPT_HOST=notepad.${MAIN_DOMAIN}${DOMAIN_SUFFIX}
             - LETSENCRYPT_EMAIL=example@example.org
         labels:
-            org.docker.services.dashboard.enabled: true
-            org.docker.services.dashboard.description: 'Collaborative notepad'
-            org.docker.services.dashboard.icon: 'pe-7s-note'
-            org.docker.services.dashboard.only_for_admin: false
-            org.docker.services.dashboard.domain: "notepad.${MAIN_DOMAIN}${DOMAIN_SUFFIX}"
+            org.riotkit.dashboard.enabled: true
+            org.riotkit.dashboard.description: 'Collaborative notepad'
+            org.riotkit.dashboard.icon: 'pe-7s-note'
+            org.riotkit.dashboard.only_for_admin: false
+            org.riotkit.dashboard.domain: "notepad.${MAIN_DOMAIN}${DOMAIN_SUFFIX}"
 ```
 
 Configuration reference:

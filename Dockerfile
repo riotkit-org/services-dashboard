@@ -1,6 +1,6 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.7
 
-ENV APP_NAME="Docker services dashboard" \
+ENV APP_NAME="RiotKit's services dashboard" \
     APP_ADMIN_TOKEN="YOUR-SECRET-ADMIN-KEY" \
     APP_PROVIDER="docker" \
     APP_PROVIDER_URL="unix:///var/run/docker.sock"
